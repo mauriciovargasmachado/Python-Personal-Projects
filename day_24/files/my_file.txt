@@ -1,0 +1,4 @@
+This is a test text.
+This test have several lines.
+And this is the third line of this file.
+And this text remplace it all
