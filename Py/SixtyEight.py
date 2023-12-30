@@ -12,7 +12,7 @@ dataDictionary = {"name":"David","lastName":"Larson","age":58}
 print(f'This is a eterogene dictionary: {dataDictionary}')
 
 storageDictionary = {"a":{"name":"Artur","lastName":"Davidson",
-                          "age":63},"b":[1,2,3,"l,8,5,6,"lib"]}
+                          "age":63},"b":[1,2,3,"l",8,5,6,"lib"]}
 
 print(f'A dictionary can storage dictionaries, list etc...: {storageDictionary}')
 
