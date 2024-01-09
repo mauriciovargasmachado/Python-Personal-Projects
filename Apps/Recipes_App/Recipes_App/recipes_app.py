@@ -36,28 +36,68 @@ def index():
         user_selection = input('What is your selection: ')
 
 
-index()
+def show_categories(route):
+    print("Categories: ")
+    route_categories = Path(route)
+    list_categories = []
+    counter = 1
+
+    for i in route_categories.iterdir():
+        folder_str = str(i.name)
+        print(f'{counter} - {folder_str}')
+        list_categories.append(i)
+        counter+=1
+
+    return list_categories
 
 
+def choose_categories(list):
+    selection = 'x'
+
+    while not selection.isnumeric() or int(selection not in range(1,len(list)+1)):
+        selection = input('\nChoose a categorie: ')
+    return list[int(selection)-1]
 
 
+def show_recipes(route):
+    print("Recipes: ")
+    route_recipes = Path(route)
+    recipes_list = []
+    counter = 0
+
+    for i in route_recipes.glob('*.txt'):
+        recipe_str = str(i.name)
+        print(f'{counter} - {recipe_str}')
+        recipes_list.append(i)
+        counter+=1
+
+    return recipes_list
+
+
+def choose_recepie(list):
+    selection = "x"
+
+    while not selection.isnumeric() or int(selection) not in range (1, len(list)+1):
+        selection = input('\nChoose a recipe: ')
+
+    return list[int(selection)-1]
 
 
 user_menu = 0
 
 if user_menu == 1:
 
-    #show cathegories
-    #choose categories
-    #show recipes
-    #choose recipes
+    my_categories = show_categories(files_route)
+    my_categorie = choose_categories(my_categories)
+    my_recipes = show_recipes(my_categorie)
+    mi_recipe = choose_recepie(my_recipes)
     #read recipes
     #back to main menu
     pass
 
 elif user_menu ==2:
-    #show cathegories
-    #choose categories
+    my_categories = show_categories(files_route)
+    my_categorie = choose_categories(my_categories)
     #create a new recipe
     # back to main menu
     pass
@@ -68,17 +108,17 @@ elif user_menu ==3:
     pass
 
 elif user_menu ==4:
-    #show cathegories
-    #choose categories
-    #show recipes
-    #choose recipes
+    my_categories = show_categories(files_route)
+    my_categorie = choose_categories(my_categories)
+    my_recipes = show_recipes(my_categorie)
+    mi_recipe = choose_recepie(my_recipes)
     #delete recipe
     #back to main menu
     pass
 
 elif user_menu ==5:
-    # show cathegories
-    # choose categories
+    my_categories = show_categories(files_route)
+    my_categorie = choose_categories(my_categories)
     # delete cathegorie
     # back to main menu
     pass
