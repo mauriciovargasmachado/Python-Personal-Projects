@@ -192,4 +192,5 @@ while not end_program:
 
 
     elif user_menu ==6:
+        print('\n**********Thank you for using our software, have a nice day!**********')
         end_program = True
