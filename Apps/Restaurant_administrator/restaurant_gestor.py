@@ -59,35 +59,74 @@ list_deserts = ['pie','cake','ice cream']
 
 #GENERATE MEALS ITEMS
 food_variables = []
+square_food = []
+text_square_food = []
+
 counter = 0
 
 for f in list_foods :
+    #CHECKBUTTON CREATION
     food_variables.append('')
     food_variables[counter] = IntVar()
     f = Checkbutton(meals_panel,text=f.title(),font=('Dosis',19,'bold'),onvalue=1,offvalue=0,variable = food_variables[counter])
     f.grid(row=counter,column=0,sticky=NW)
+
+    #REGISTER SQUARES CREATION
+    square_food.append('')
+    text_square_food.append("")
+    text_square_food[counter]= StringVar()
+    text_square_food[counter].set(0)
+    square_food[counter]= Entry(meals_panel, font=('Dosis',17,'bold'),bd = 1 , width=6, state=DISABLED,textvariable=text_square_food[counter])
+    square_food[counter].grid(row = counter,column=1)
+
+
     counter+=1
 
 #GENERATE DRINKS ITEMS
 drink_variables = []
+square_drink = []
+text_square_drink = []
 counter_1 = 0
 
 for d in list_drinks :
+    # CHECKBUTTON CREATION
     drink_variables.append('')
     drink_variables[counter_1] = IntVar()
     f = Checkbutton(drinks_panel,text=d.title(),font=('Dosis',19,'bold'),onvalue=1,offvalue=0,variable = drink_variables[counter_1])
     f.grid(row=counter_1,column=0,sticky=NW)
+
+    #REGISTER SQUARES CREATION
+    square_drink.append('')
+    text_square_drink.append("")
+    text_square_drink[counter_1]= StringVar()
+    text_square_drink[counter_1].set(0)
+    square_drink[counter_1]= Entry(drinks_panel, font=('Dosis',17,'bold'),bd = 1 , width=6, state=DISABLED,textvariable=text_square_drink[counter_1])
+    square_drink[counter_1].grid(row = counter_1,column=1)
+
     counter_1+=1
 
 #GENERATE DESERTS ITEMS
 deserts_variables = []
+square_deserts = []
+text_square_deserts = []
 counter_2 = 0
 
 for de in list_deserts :
+    # CHECKBUTTON CREATION
     deserts_variables.append('')
     deserts_variables[counter_2] = IntVar()
     f = Checkbutton(deserts_panel,text=de.title(),font=('Dosis',19,'bold'),onvalue=1,offvalue=0,variable = deserts_variables[counter_2])
     f.grid(row=counter_2, column=0, sticky=NW)
+
+    #REGISTER SQUARES CREATION
+    square_deserts.append('')
+    text_square_deserts.append("")
+    text_square_deserts[counter_2]=StringVar()
+    text_square_deserts[counter_2].set(0)
+    square_deserts[counter_2]= Entry(deserts_panel, font=('Dosis',17,'bold'),bd = 1 , width=6, state=DISABLED,textvariable=text_square_deserts[counter_2])
+    square_deserts[counter_2].grid(row = counter_2,column=1)
+
+
     counter_2+=1
 
 #KEEP THE WINDOW OPEN
